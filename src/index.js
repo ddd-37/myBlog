@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
+
+// COMPONENTS
+import App from "./containers/App";
+
+// STYLES
+import "./styles/style.scss";
+import "normalize.css";
 
 ReactDOM.render(<App />, document.getElementById("root"));
