@@ -12,6 +12,8 @@ class Main extends Component {
     posts: null
   };
 
+  async getPosts() {}
+
   componentDidMount() {
     // Let's go out and get our posts' titles and bodies (this business should be an async await since it fails intermitently)
     axiosRequest("/posts")
@@ -20,23 +22,25 @@ class Main extends Component {
         this.setState({
           posts
         });
+
+        // Just for fun, let's attach author names to the data
+        return axiosRequest("/users")
+          .then(users => {
+            const userData = users.data;
+            let posts = [...this.state.posts];
+
+            posts.map((post, i) => {
+              return (post.author = userData[i].name);
+            });
+
+            this.setState({
+              posts
+            });
+          })
+          .catch(error => {
+            console.log(error);
+          });
       })
-      // Just for fun, let's attach author names to the data
-      .then(
-        axiosRequest("/users").then(users => {
-          const userData = users.data;
-
-          let posts = [...this.state.posts];
-
-          posts.map((post, i) => {
-            return (post.author = userData[i].name);
-          });
-
-          this.setState({
-            posts
-          });
-        })
-      )
       .catch(error => {
         console.log(error);
       });

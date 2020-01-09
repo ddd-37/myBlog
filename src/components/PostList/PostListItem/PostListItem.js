@@ -1,7 +1,6 @@
 import React from "react";
 
 const PostListItem = props => {
-  console.log("TCL: props", props);
   return (
     <div className="PostListItem">
       <h1>{props.title}</h1>
