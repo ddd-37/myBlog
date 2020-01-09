@@ -26,10 +26,14 @@ class Main extends Component {
         axiosRequest("/users").then(users => {
           const userData = users.data;
 
-          let newPosts = [...this.state.posts];
+          let posts = [...this.state.posts];
 
-          newPosts.map((post, i) => {
+          posts.map((post, i) => {
             return (post.author = userData[i].name);
+          });
+
+          this.setState({
+            posts
           });
         })
       )
