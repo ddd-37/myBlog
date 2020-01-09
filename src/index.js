@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 // COMPONENTS
-import App from "./containers/App";
+import Main from "./containers/Main";
 
 // STYLES
 import "./styles/style.scss";
 import "normalize.css";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<Main />, document.getElementById("root"));
