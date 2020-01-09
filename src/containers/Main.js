@@ -12,8 +12,6 @@ class Main extends Component {
     posts: null
   };
 
-  async getPosts() {}
-
   componentDidMount() {
     // Let's go out and get our posts' titles and bodies (this business should be an async await since it fails intermitently)
     axiosRequest("/posts")
