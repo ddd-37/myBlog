@@ -13,7 +13,7 @@ const PostCurrent = ({ data }) => {
       </>
     );
   }
-  return <div className="PostCurrent MainContainer">{msg}</div>;
+  return <div className="PostCurrent PostContainer">{msg}</div>;
 };
 
 export default PostCurrent;

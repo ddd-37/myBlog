@@ -5,9 +5,9 @@ import PostList from "../components/PostList/PostList";
 import PostCurrent from "../components/PostCurrent/PostCurrent";
 
 // UTILS
-import axiosRequest from "./../utils/axios/axios";
+import axiosRequest from "../utils/axios/axios";
 
-class Main extends Component {
+class Posts extends Component {
   state = {
     posts: null,
     currentPost: null
@@ -56,7 +56,7 @@ class Main extends Component {
   render() {
     console.log(this.state);
     return (
-      <div className="Main">
+      <div className="Posts">
         <PostList
           data={this.state.posts}
           clickHandler={this.handleClickOnPost}
@@ -67,4 +67,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default Posts;

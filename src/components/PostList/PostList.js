@@ -22,7 +22,7 @@ const PostList = props => {
     });
   }
 
-  return <div className="PostList MainContainer">{posts}</div>;
+  return <div className="PostList PostContainer">{posts}</div>;
 };
 
 export default PostList;
