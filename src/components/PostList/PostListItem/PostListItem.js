@@ -1,7 +1,7 @@
 import React from "react";
 
 const PostListItem = props => {
-  console.log("PostListItem: props", props);
+  //console.log("PostListItem: props", props);
   return (
     <div
       className="PostListItem"

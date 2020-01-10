@@ -4,7 +4,7 @@ import React from "react";
 import PostListItem from "./PostListItem/PostListItem";
 
 const PostList = props => {
-  console.log("PostList: props", props);
+  //console.log("PostList: props", props);
   let posts;
 
   // Make sure we have some data before we try to map the posts

@@ -46,10 +46,15 @@ class Main extends Component {
   }
 
   handleClickOnPost = id => {
-    console.log(id);
+    let currentPost = this.state.posts.find(post => post.id === id);
+
+    this.setState({
+      currentPost
+    });
   };
 
   render() {
+    console.log(this.state);
     return (
       <div className="Main">
         <PostList
