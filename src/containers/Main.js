@@ -16,7 +16,7 @@ class Main extends Component {
     // Let's go out and get our posts' titles and bodies (this business should be an async await since it fails intermitently)
     axiosRequest("/posts")
       .then(postData => {
-        let posts = postData.data.slice(0, 10);
+        let posts = postData.data.slice(0, 5);
         this.setState({
           posts
         });

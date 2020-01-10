@@ -1,3 +1,21 @@
 .PostListItem {
-    border: 1px solid blue;
+  background: #f4f4f4;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  transition: 0.2s;
+  @include shadow;
+}
+
+.PostListItem h1 {
+  font-size: 2rem;
+}
+
+.PostListItem h2 {
+  font-size: 1.5rem;
+}
+
+.PostListItem:hover {
+  background: rgb(35, 129, 153);
+  color: #f4f4f4;
 }

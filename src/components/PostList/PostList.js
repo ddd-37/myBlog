@@ -7,6 +7,7 @@ const PostList = props => {
   console.log("TCL: props", props);
   let posts;
 
+  // Make sure we have some data before we try to map the posts
   if (props.data) {
     posts = props.data.map(post => {
       return (
@@ -15,7 +16,7 @@ const PostList = props => {
     });
   }
 
-  return <div className="PostList">{posts}</div>;
+  return <div className="PostList MainContainer">{posts}</div>;
 };
 
 export default PostList;
