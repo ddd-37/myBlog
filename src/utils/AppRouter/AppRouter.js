@@ -9,10 +9,10 @@ const AppRouter = () => (
   <main>
     <BrowserRouter>
       <header>
-        <NavLink to="/" activeClassName="active-link">
+        <NavLink to="/" activeClassName="active-link" exact>
           Home
         </NavLink>
-        <NavLink to="/newPost" activeClassName="active-link">
+        <NavLink to="/newPost" activeClassName="active-link" exact>
           Create Post
         </NavLink>
       </header>

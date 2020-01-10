@@ -1,0 +1,23 @@
+main {
+  background: purple;
+  margin: 3rem auto;
+  min-height: 57rem;
+  width: 100rem;
+}
+
+header {
+  text-align: center;
+  color: #f4f4f4;
+}
+
+header a {
+  color: #f4f4f4;
+  margin: 1rem;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.active-link {
+  color: rgb(208, 255, 0);
+  font-weight: 700;
+}

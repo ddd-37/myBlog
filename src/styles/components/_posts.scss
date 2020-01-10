@@ -1,12 +1,5 @@
 .Posts {
-  background-color: purple;
   display: flex;
-  margin: 3rem auto;
-  max-height: 98vh;
-  max-width: 98vw;
-  padding: 1rem;
-  width: 100rem;
-  @include shadow;
 }
 
 .PostContainer {
