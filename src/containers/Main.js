@@ -9,7 +9,8 @@ import axiosRequest from "./../utils/axios/axios";
 
 class Main extends Component {
   state = {
-    posts: null
+    posts: null,
+    currentPost: null
   };
 
   componentDidMount() {
@@ -44,11 +45,18 @@ class Main extends Component {
       });
   }
 
+  handleClickOnPost = id => {
+    console.log(id);
+  };
+
   render() {
     return (
       <div className="Main">
-        <PostList data={this.state.posts} />
-        <PostCurrent />
+        <PostList
+          data={this.state.posts}
+          clickHandler={this.handleClickOnPost}
+        />
+        <PostCurrent data={this.state.currentPost} />
       </div>
     );
   }
