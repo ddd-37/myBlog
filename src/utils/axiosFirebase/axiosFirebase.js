@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const axiosRequest = axios.create({
+const axiosFirebase = axios.create({
   baseURL: "https://myblog-177bd.firebaseio.com"
 });
 
@@ -23,4 +23,4 @@ axios.interceptors.response.use(
   }
 );
 
-export default axiosRequest;
+export default axiosFirebase;
