@@ -4,13 +4,15 @@ const Input = props => {
   let newInput;
   switch (props.input) {
     case "text":
-      newInput = <input type={props.input} {...props} />;
+      newInput = (
+        <input className="Input__input" type={props.input} {...props} />
+      );
       break;
     case "textarea":
-      newInput = <textarea {...props} />;
+      newInput = <textarea className="Input__input" {...props} />;
       break;
     default:
-      newInput = <input type="text" {...props} />;
+      newInput = <input className="Input__input" type="text" {...props} />;
       break;
   }
 
