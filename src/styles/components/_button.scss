@@ -1,0 +1,23 @@
+.Button {
+  border-radius: 3px;
+  padding: 1rem;
+  position: relative;
+  outline: none;
+  transition: 0.1s;
+  top: 0;
+  @include shadow;
+}
+
+.Success {
+  background-color: rgb(84, 173, 111);
+  border: 1px solid rgb(17, 173, 17);
+  color: #fff;
+}
+
+.Button:hover {
+  top: -2px;
+}
+
+.Button:active {
+  top: 2px;
+}
