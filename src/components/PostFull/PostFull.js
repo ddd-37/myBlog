@@ -1,5 +1,4 @@
 import React from "react";
-import axiosRequest from "./../../utils/axios/axios";
 
 const FullPost = props => {
   console.log("TCL: FullPost", props);

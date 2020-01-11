@@ -1,0 +1,20 @@
+.Modal {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 100%;
+}
+
+.Modal__card {
+  background: #eee;
+  margin: 15% auto;
+  padding: 2rem 0;
+  width: 40rem;
+}
+
+.Hide {
+  display: none;
+}
