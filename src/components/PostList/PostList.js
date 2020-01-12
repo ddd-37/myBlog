@@ -4,18 +4,29 @@ import React from "react";
 import PostListItem from "./PostListItem/PostListItem";
 
 const PostList = props => {
-  //console.log("PostList: props", props);
-  let posts;
+  console.log("PostList: props", props);
+  let posts = [];
 
-  // Make sure we have some data before we try to map the posts
+  // Convert our object to an array of objects
   if (props.data) {
-    posts = props.data.map(post => {
+    for (let key in props.data) {
+      posts.push({
+        id: key,
+        content: props.data[key]
+      });
+      console.log("posts", posts);
+    }
+
+    // Make sure we have some data before we try to map the posts
+
+    posts = posts.map(post => {
+      console.log("TCL: post", post);
       return (
         <PostListItem
           key={post.id}
           id={post.id}
-          title={post.title}
-          author={post.author}
+          title={post.content.title}
+          author={post.content.author}
           clickHandler={props.clickHandler}
         />
       );

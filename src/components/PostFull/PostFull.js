@@ -11,9 +11,9 @@ const FullPost = props => {
   const data = props.location.state.data;
   return (
     <div className="PostFull">
-      <h1>{data.title}</h1>
-      <h2>Writen by {data.author} on Jan, 11, 2020</h2>
-      <p>{data.body}</p>
+      <h1>{data.content.title}</h1>
+      <h2>Writen by {data.content.author} on Jan, 11, 2020</h2>
+      <p>{data.content.body}</p>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import PostList from "../components/PostList/PostList";
 import PostCurrent from "../components/PostCurrent/PostCurrent";
 
 // UTILS
-import axiosRequest from "../utils/axios/axios";
+import axiosFirebase from "../utils/axiosFirebase/axiosFirebase";
 
 class Posts extends Component {
   state = {
@@ -15,30 +15,17 @@ class Posts extends Component {
 
   componentDidMount() {
     // Let's go out and get our posts' titles and bodies (this business should be an async await since it fails intermitently)
-    axiosRequest("/posts")
+    axiosFirebase
+      .get("/posts.json")
       .then(postData => {
-        let posts = postData.data.slice(0, 5);
+        console.log(
+          "TCL: Posts -> componentDidMount -> postData",
+          postData.data
+        );
+        let posts = postData.data;
         this.setState({
           posts
         });
-
-        // Just for fun, let's attach author names to the data
-        return axiosRequest("/users")
-          .then(users => {
-            const userData = users.data;
-            let posts = [...this.state.posts];
-
-            posts.map((post, i) => {
-              return (post.author = userData[i].name);
-            });
-
-            this.setState({
-              posts
-            });
-          })
-          .catch(error => {
-            console.log(error);
-          });
       })
       .catch(error => {
         console.log(error);
@@ -46,11 +33,24 @@ class Posts extends Component {
   }
 
   handleClickOnPost = id => {
-    let currentPost = this.state.posts.find(post => post.id === id);
+    console.log(this.state.posts);
 
-    this.setState({
-      currentPost
-    });
+    if (this.state.posts) {
+      let posts = [];
+      for (let key in this.state.posts) {
+        posts.push({
+          id: key,
+          content: this.state.posts[key]
+        });
+        console.log("posts", posts);
+      }
+
+      let currentPost = posts.find(post => post.id === id);
+
+      this.setState({
+        currentPost
+      });
+    }
   };
 
   render() {
