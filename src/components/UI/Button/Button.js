@@ -11,8 +11,8 @@ const Button = props => {
     classes += " Cancel";
   }
   return (
-    <button className={classes} type={props.type}>
-      {props.text}
+    <button className={classes} type={props.type} onClick={props.clickhandler}>
+      {props.children}
     </button>
   );
 };

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 // COMPONENTS
 import Input from "../UI/Input/Input";
@@ -10,13 +11,7 @@ import axiosFirebase from "./../../utils/axiosFirebase/axiosFirebase";
 
 class PostNew extends Component {
   state = {
-    modalConfig: {
-      btnPath: null,
-      btnText: null,
-      status: null,
-      mainMessage: null,
-      show: false
-    }
+    showModal: false
   };
 
   formSubmitHandler = e => {
@@ -31,33 +26,25 @@ class PostNew extends Component {
       .post("/posts.json", formData)
       .then(response => {
         if (response.status === 200) {
-          this.setState({
-            modalConfig: {
-              btnPath: "/",
-              btnText: "Back to Main",
-              status: "success",
-              mainMessage: "Your post was succesfully created!",
-              show: true
-            }
-          });
+          this.setState({ showModal: true });
         }
       })
+
       .catch(error => {
         console.log(error);
       });
   };
 
   render() {
-    console.log("TCL: PostNew -> render", this.state);
     let modal;
-    if (this.state.modalConfig.status) {
+    if (this.state.showModal) {
       modal = (
-        <Modal
-          show={this.state.modalConfig.show}
-          btnPath={this.state.modalConfig.btnPath}
-          btnText={this.state.modalConfig.btnText}
-          mainMessage={this.state.modalConfig.mainMessage}
-        />
+        <Modal show={this.state.showModal}>
+          <h2>Your post was successfully created!</h2>
+          <Link to="/">
+            <Button type="success">Go back to Main Page</Button>
+          </Link>
+        </Modal>
       );
     }
     return (
@@ -81,7 +68,9 @@ class PostNew extends Component {
             required
             rows="5"
           />
-          <Button type="success" text="Submit" />
+          <Button type="success" text="Submit">
+            Create Post
+          </Button>
         </form>
         {modal}
       </div>

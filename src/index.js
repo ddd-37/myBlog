@@ -10,6 +10,9 @@ import "./styles/style.scss";
 import "normalize.css";
 
 class App extends Component {
+  state = {
+    showModal: false
+  };
   render() {
     return (
       <BrowserRouter>
