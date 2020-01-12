@@ -12,7 +12,9 @@ const FullPost = props => {
   return (
     <div className="PostFull">
       <h1>{data.title}</h1>
-      <h2>Writen by {data.author} on Jan, 11, 2020</h2>
+      <h2>
+        Writen by {data.author} on {data.createdAt}
+      </h2>
       <p>{data.body}</p>
     </div>
   );

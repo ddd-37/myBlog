@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+// THIS IS SIMPLY FOR MY DEVELOPMENT
+import faker from "faker";
+
 // COMPONENTS
 import Input from "../UI/Input/Input";
 import Button from "../UI/Button/Button";
@@ -10,6 +13,7 @@ import Modal from "../UI/Modal/Modal";
 import axiosFirebase from "./../../utils/axiosFirebase/axiosFirebase";
 
 class PostNew extends Component {
+  // TODO - think about this, there might be a better way to manage modals throughout the app
   state = {
     showModal: false
   };
@@ -18,8 +22,10 @@ class PostNew extends Component {
     e.preventDefault();
 
     const formData = {
-      title: e.target.elements.title.value,
-      body: e.target.elements.body.value
+      body: e.target.elements.body.value,
+      author: e.target.elements.author.value,
+      createdAt: new Date().toDateString(),
+      title: e.target.elements.title.value
     };
     // axiosFirebase
     axiosFirebase
@@ -36,6 +42,7 @@ class PostNew extends Component {
   };
 
   render() {
+    console.log(faker.name.firstName());
     let modal;
     if (this.state.showModal) {
       modal = (
@@ -57,6 +64,16 @@ class PostNew extends Component {
             label="Title of post:"
             minLength="3"
             placeholder="Min character 3"
+            value={faker.lorem.words()}
+            required
+          />
+          <Input
+            input="text"
+            name="author"
+            label="Author of post:"
+            minLength="3"
+            placeholder="Min character 3"
+            value={faker.name.firstName() + " " + faker.name.lastName()}
             required
           />
           <Input
@@ -66,6 +83,7 @@ class PostNew extends Component {
             minLength="10"
             placeholder="Min character 10"
             required
+            value={faker.lorem.paragraphs()}
             rows="5"
           />
           <Button type="success" text="Submit">
