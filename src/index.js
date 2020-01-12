@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter, NavLink } from "react-router-dom";
 
 // COMPONENTS
 import AppRouter from "./utils/AppRouter/AppRouter";
@@ -8,4 +9,24 @@ import AppRouter from "./utils/AppRouter/AppRouter";
 import "./styles/style.scss";
 import "normalize.css";
 
-ReactDOM.render(<AppRouter />, document.getElementById("root"));
+class App extends Component {
+  render() {
+    return (
+      <BrowserRouter>
+        <main className="Main">
+          <header>
+            <NavLink to="/" activeClassName="active-link" exact>
+              Home
+            </NavLink>
+            <NavLink to="/newPost" activeClassName="active-link" exact>
+              Create Post
+            </NavLink>
+          </header>
+          <AppRouter />
+        </main>
+      </BrowserRouter>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById("root"));
