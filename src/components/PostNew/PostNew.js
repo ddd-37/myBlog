@@ -42,7 +42,6 @@ class PostNew extends Component {
   };
 
   render() {
-    console.log(faker.name.firstName());
     let modal;
     if (this.state.showModal) {
       modal = (

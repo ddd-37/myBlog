@@ -18,10 +18,6 @@ class Posts extends Component {
     axiosFirebase
       .get("/posts.json")
       .then(postData => {
-        console.log(
-          "TCL: Posts -> componentDidMount -> postData",
-          postData.data
-        );
         let posts = postData.data;
         this.setState({
           posts
@@ -33,8 +29,6 @@ class Posts extends Component {
   }
 
   handleClickOnPost = id => {
-    console.log(this.state.posts);
-
     if (this.state.posts) {
       let posts = [];
       for (let key in this.state.posts) {
@@ -42,7 +36,6 @@ class Posts extends Component {
           id: key,
           content: this.state.posts[key]
         });
-        console.log("posts", posts);
       }
 
       let currentPost = posts.find(post => post.id === id);
@@ -54,7 +47,6 @@ class Posts extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <div className="Posts">
         <PostList

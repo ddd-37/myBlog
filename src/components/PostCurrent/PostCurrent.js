@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const PostCurrent = ({ data }) => {
-  console.log("TCL: PostCurrent - data", data);
   let msg = <p>Please select a post to see preview</p>;
 
   if (data) {

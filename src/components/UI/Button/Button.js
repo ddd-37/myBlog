@@ -7,8 +7,8 @@ const Button = props => {
     classes += " Success";
   }
 
-  if (props.type === "cancel") {
-    classes += " Cancel";
+  if (props.type === "danger") {
+    classes += " Danger";
   }
   return (
     <button className={classes} type={props.type} onClick={props.clickhandler}>

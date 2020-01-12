@@ -1,5 +1,7 @@
 .Button {
   border-radius: 3px;
+  margin: 1rem;
+  min-width: 17rem;
   padding: 1rem;
   position: relative;
   outline: none;
@@ -14,7 +16,7 @@
   color: #fff;
 }
 
-.Cancel {
+.Danger {
   background-color: rgb(173, 84, 84);
   border: 1px solid rgb(173, 17, 17);
   color: #fff;

@@ -4,7 +4,6 @@ import React from "react";
 import PostListItem from "./PostListItem/PostListItem";
 
 const PostList = props => {
-  console.log("PostList: props", props);
   let posts = [];
 
   // Convert our object to an array of objects
@@ -14,13 +13,11 @@ const PostList = props => {
         id: key,
         content: props.data[key]
       });
-      console.log("posts", posts);
     }
 
     // Make sure we have some data before we try to map the posts
 
     posts = posts.map(post => {
-      console.log("TCL: post", post);
       return (
         <PostListItem
           key={post.id}
