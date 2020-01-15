@@ -21,7 +21,6 @@ class FullPost extends Component {
   };
 
   deletePostHandler = id => {
-    console.log(id);
     axiosFirebase
       .delete(`posts/${id}.json`)
       .then(response => {
@@ -46,10 +45,6 @@ class FullPost extends Component {
       console.log("no data");
     }
     const data = this.props.location.state.data.content;
-    console.log(
-      "TCL: FullPost -> render -> data",
-      this.props.location.state.data.id
-    );
 
     let comment;
     if (this.state.showComment) {

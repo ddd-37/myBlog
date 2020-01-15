@@ -14,13 +14,11 @@ class Posts extends Component {
   };
 
   componentDidMount() {
-    console.log("TCL: Posts -> componentDidMount -> componentDidMount");
     // Let's go out and get our posts' titles and bodies (this business should be an async await since it fails intermitently)
     axiosFirebase
       .get("/posts.json")
       .then(postData => {
         let posts = postData.data;
-        console.log("TCL: Posts -> componentDidMount -> posts", posts);
         this.setState({
           posts
         });

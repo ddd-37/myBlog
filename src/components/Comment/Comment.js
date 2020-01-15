@@ -6,6 +6,7 @@ import faker from "faker";
 // COMPONENTS
 import Input from "../UI/Input/Input";
 import Button from "../UI/Button/Button";
+import CommentList from "../Comment/CommentList/CommentList";
 
 // UTILS
 import axiosFirebase from "../../utils/axiosFirebase/axiosFirebase";
@@ -13,8 +14,20 @@ import axiosFirebase from "../../utils/axiosFirebase/axiosFirebase";
 class Comment extends Component {
   // TODO - think about this, there might be a better way to manage modals throughout the app
   state = {
-    showModal: false
+    showModal: false,
+    comments: null
   };
+
+  componentDidMount() {
+    axiosFirebase
+      .get(`/posts/${this.props.postId}/comments.json`)
+      .then(response => {
+        console.log(response);
+        this.setState({
+          comments: response.data
+        });
+      });
+  }
 
   commentSubmitHandler = e => {
     e.preventDefault();
@@ -35,9 +48,9 @@ class Comment extends Component {
   };
 
   render() {
-    console.log("comment", this.props);
     return (
       <div className="Comment">
+        <CommentList data={this.state.comments} />
         <h3>Create a new post here</h3>
         <form onSubmit={e => this.commentSubmitHandler(e)}>
           <Input
