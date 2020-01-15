@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 import faker from "faker";
 
 // COMPONENTS
-import Input from "../UI/Input/Input";
-import Button from "../UI/Button/Button";
-import Modal from "../UI/Modal/Modal";
+import Input from "../../UI/Input/Input";
+import Button from "../../UI/Button/Button";
+import Modal from "../../UI/Modal/Modal";
 
 // UTILS
-import axiosFirebase from "./../../utils/axiosFirebase/axiosFirebase";
+import axiosFirebase from "../../../utils/axiosFirebase/axiosFirebase";
 
 class PostNew extends Component {
   // TODO - think about this, there might be a better way to manage modals throughout the app

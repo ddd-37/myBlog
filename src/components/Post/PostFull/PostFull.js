@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import Button from "../UI/Button/Button";
-import Modal from "../UI/Modal/Modal";
+import Button from "../../UI/Button/Button";
+import Modal from "../../UI/Modal/Modal";
 import { Link } from "react-router-dom";
-import axiosFirebase from "./../../utils/axiosFirebase/axiosFirebase";
+import axiosFirebase from "../../../utils/axiosFirebase/axiosFirebase";
 
 class FullPost extends Component {
   state = {
+    showComment: false,
     showModal: false
   };
 

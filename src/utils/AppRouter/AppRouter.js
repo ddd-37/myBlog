@@ -3,8 +3,8 @@ import { Switch, Route } from "react-router-dom";
 
 //  COMPONENTS
 import Posts from "../../containers/Posts";
-import NewPost from "../../components/PostNew/PostNew";
-import FullPost from "./../../components/PostFull/PostFull";
+import NewPost from "../../components/Post/PostNew/PostNew";
+import FullPost from "./../../components/Post/PostFull/PostFull";
 
 const AppRouter = () => (
   <Switch>

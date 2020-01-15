@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
 // COMPONENTS
-import PostList from "../components/PostList/PostList";
-import PostCurrent from "../components/PostCurrent/PostCurrent";
+import PostList from "../components/Post/PostList/PostList";
+import PostCurrent from "../components/Post/PostCurrent/PostCurrent";
 
 // UTILS
 import axiosFirebase from "../utils/axiosFirebase/axiosFirebase";
