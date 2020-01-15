@@ -13,8 +13,8 @@ const CommentList = props => {
   }
 
   return (
-    <div>
-      <h1>Comment List</h1>
+    <div className="CommentList">
+      <h3 className="CommentList__title">Comment List</h3>
       {comments}
     </div>
   );

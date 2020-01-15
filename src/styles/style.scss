@@ -3,13 +3,17 @@
 @import "./base/mixins";
 
 @import "./components/approuter";
-@import "./components/button";
-@import "./components/input";
-@import "./components/postfull";
-@import "./components/modal";
-@import "./components/posts";
-@import "./components/postlist";
-@import "./components/postlistitem";
-@import "./components/postcurrent";
-@import "./components/postfull";
-@import "./components/postnew";
+
+@import "./components/UI/button";
+@import "./components/UI/input";
+@import "./components/UI/modal";
+
+@import "./components/posts/posts";
+@import "./components/posts/postList";
+@import "./components/posts/postListitem";
+@import "./components/posts/postCurrent";
+@import "./components/posts/postFull";
+@import "./components/posts/postNew";
+
+@import "./components/comment/commentList";
+@import "./components/comment/commentListItem";
