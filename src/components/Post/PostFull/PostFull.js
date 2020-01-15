@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 
 // COMPENENTS
 import Button from "../../UI/Button/Button";
@@ -26,7 +25,9 @@ class FullPost extends Component {
     axiosFirebase
       .delete(`posts/${id}.json`)
       .then(response => {
-        this.props.history.push("/");
+        if (response.status === 200) {
+          this.props.history.push("/");
+        }
       })
       .catch(error => {
         console.log(error);
