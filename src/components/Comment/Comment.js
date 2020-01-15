@@ -26,12 +26,8 @@ class Comment extends Component {
     };
     // axiosFirebase
     axiosFirebase
-      .post(`/posts.json/${this.state.props.postId}/comments`, formData)
-      .then(response => {
-        if (response.status === 200) {
-          this.setState({ showModal: true });
-        }
-      })
+      .post(`/posts/${this.props.postId}/comments.json`, formData)
+      .then(response => {})
 
       .catch(error => {
         console.log(error);
@@ -39,7 +35,7 @@ class Comment extends Component {
   };
 
   render() {
-    console.log(this.state.props);
+    console.log("comment", this.props);
     return (
       <div className="Comment">
         <h3>Create a new post here</h3>
