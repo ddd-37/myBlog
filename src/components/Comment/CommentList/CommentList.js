@@ -7,8 +7,10 @@ const CommentList = props => {
   let comments;
 
   if (props.data) {
-    comments = Object.values(props.data).map(comment => {
-      return <CommentListItem comment={comment} />;
+    comments = Object.values(props.data).map((comment, i) => {
+      // Get the key provided by FireBase
+      const key = Object.keys(props.data)[i];
+      return <CommentListItem comment={comment} key={key} />;
     });
   }
 
