@@ -40,7 +40,14 @@ class Comment extends Component {
     // axiosFirebase
     axiosFirebase
       .post(`/posts/${this.props.postId}/comments.json`, formData)
-      .then(response => {})
+      .then(response => {
+        if (response.status === 200) {
+          // TODO - come back to this, right now I'm just adding the formData to the state so I can get a component refresh
+          this.setState({
+            comments: { ...this.state.comments, formData }
+          });
+        }
+      })
 
       .catch(error => {
         console.log(error);
