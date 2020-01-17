@@ -9,13 +9,13 @@
 }
 
 header {
-  color: #f4f4f4;
+  color: $gray-main;
   text-align: center;
 }
 
 header a {
   display: inline-block;
-  color: #f4f4f4;
+  color: $gray-main;
   margin: 1rem;
   text-decoration: none;
   vertical-align: middle;

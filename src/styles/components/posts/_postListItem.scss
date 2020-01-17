@@ -1,5 +1,5 @@
 .PostListItem {
-  background: #f4f4f4;
+  background: $gray-main;
   cursor: pointer;
   margin-bottom: 0.5rem;
   min-width: 25rem;
@@ -18,5 +18,5 @@
 
 .PostListItem:hover {
   background: rgb(35, 129, 153);
-  color: #f4f4f4;
+  color: $gray-main;
 }
