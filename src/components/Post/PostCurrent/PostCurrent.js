@@ -11,7 +11,7 @@ const PostCurrent = ({ data }) => {
         <h2>Written by -- {data.content.author}</h2>
         <p>{data.content.body}</p>
         <Link to={{ pathname: `/fullPost/${data.id}`, state: { data } }}>
-          Click to see full post
+          View full post
         </Link>
       </>
     );
